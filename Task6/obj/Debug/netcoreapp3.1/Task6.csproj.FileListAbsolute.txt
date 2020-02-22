@@ -1,0 +1,11 @@
+/home/abbas/RiderProjects/Task6/Task6/bin/Debug/netcoreapp3.1/Task6
+/home/abbas/RiderProjects/Task6/Task6/bin/Debug/netcoreapp3.1/Task6.deps.json
+/home/abbas/RiderProjects/Task6/Task6/bin/Debug/netcoreapp3.1/Task6.runtimeconfig.json
+/home/abbas/RiderProjects/Task6/Task6/bin/Debug/netcoreapp3.1/Task6.runtimeconfig.dev.json
+/home/abbas/RiderProjects/Task6/Task6/bin/Debug/netcoreapp3.1/Task6.dll
+/home/abbas/RiderProjects/Task6/Task6/bin/Debug/netcoreapp3.1/Task6.pdb
+/home/abbas/RiderProjects/Task6/Task6/obj/Debug/netcoreapp3.1/Task6.csprojAssemblyReference.cache
+/home/abbas/RiderProjects/Task6/Task6/obj/Debug/netcoreapp3.1/Task6.AssemblyInfoInputs.cache
+/home/abbas/RiderProjects/Task6/Task6/obj/Debug/netcoreapp3.1/Task6.AssemblyInfo.cs
+/home/abbas/RiderProjects/Task6/Task6/obj/Debug/netcoreapp3.1/Task6.dll
+/home/abbas/RiderProjects/Task6/Task6/obj/Debug/netcoreapp3.1/Task6.pdb
