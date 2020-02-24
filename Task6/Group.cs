@@ -21,17 +21,18 @@ namespace Task6
             this.Students_list.Add(p1);
         }
 
-        public void Show_list()
+        /*public Person Show_list(List<Person> Students_list)
         {
-            foreach (Person item in Students_list)
+            foreach (var VARIABLE in Students_list)
             {
-                Console.WriteLine(item+" ");
+                return VARIABLE;
             }
-        }
+        }*/
         public override string ToString()
         {
             return $"Факультет -   {Faculty_name}\nКафедра -   {Cafedra_name}\nГруппа -   {Group_name}\nСтароста группы -   " +
-                   $"{Starosta}\nСписок студентов группы -   ";//TODO remake
+                   $"{Starosta}\nСписок студентов группы -  {Students_list} ";//TODO remake
+            
         }
     }
 }
