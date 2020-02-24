@@ -12,6 +12,7 @@ namespace Task6
             var Group = new Group("Естественно-Технический факультет","Информационные и вычислительные технологии"
                 ,true,Glavcaf,"ЕПИ-1-17",Starosta);
             Group.Students_list.Add(Studik);
+            Group.Students_list.Add(new Person{Name="Нурсултан Кудайбергенов"});
             Console.WriteLine(Group.ToString());
         }
     }
