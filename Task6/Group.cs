@@ -9,7 +9,7 @@ namespace Task6
         public Person Starosta{ get; set; }
         public List<Person> Students_list = new List<Person>();
         public Group(){}
-        public Group(string fname,string cname,bool isProfilir, Person glavcaferdy,string name,Person person):base(fname,cname,isProfilir,glavcaferdy)
+        public Group(string fname,string cname,bool isProfilir, Teacher glavcaferdy,string name,Student person):base(fname,cname,isProfilir,glavcaferdy)
         {
             Group_name = name;
             this.Starosta = person;
@@ -26,7 +26,7 @@ namespace Task6
             string st = "", stt = "";
             foreach (var VARIABLE in Students_list)
             {
-                stt = $"{VARIABLE}, ";
+                stt = $"  {VARIABLE}";
                 st += stt;
             }
             return st;
@@ -34,7 +34,7 @@ namespace Task6
         public override string ToString()
         {
             return $"Факультет -   {Faculty_name}\nКафедра -   {Cafedra_name}\nГруппа -   {Group_name}\nСтароста группы -   " +
-                   $"{Starosta}\nСписок студентов группы:  {Show_list(Students_list)} ";
+                   $"{Starosta}\nСписок студентов группы:  {Show_list(Students_list)}.";
             
         }
     }

@@ -6,11 +6,6 @@ namespace Task6
     {
         public string Name{ get; set; }
         public string Gender{ get; set; }
-        public enum Position
-        {
-            Teacher,
-            Student
-        }
         public string Id{ get; set; }
         public string Address{ get; set; }
 
@@ -27,7 +22,7 @@ namespace Task6
         }
         public override string ToString()
         {
-            return Name;//Remake it
+            return Name;
         }
     }
 }
