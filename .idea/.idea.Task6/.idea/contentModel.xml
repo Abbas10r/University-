@@ -5,12 +5,11 @@
     <e p="$USER_HOME$/.Rider2019.3/system/resharper-host/local/Transient/ReSharperHost/v193/SolutionCaches/_Task6.-1344476849.00" t="ExcludeRecursive" />
     <e p="$PROJECT_DIR$" t="IncludeFlat">
       <e p="Task6" t="IncludeRecursive">
-        <e p="Cafedra.cs" t="Include" />
+        <e p="Department.cs" t="Include" />
         <e p="Faculty.cs" t="Include" />
         <e p="Group.cs" t="Include" />
         <e p="Person.cs" t="Include" />
         <e p="Program.cs" t="Include" />
-        <e p="Studeacher.cs" t="Include" />
         <e p="Student.cs" t="Include" />
         <e p="Task6.csproj" t="IncludeRecursive" />
         <e p="Teacher.cs" t="Include" />

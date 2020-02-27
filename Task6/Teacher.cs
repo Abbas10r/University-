@@ -1,15 +1,20 @@
+using System;
+using System.Collections.Generic;
+
 namespace Task6
 {
     public class Teacher:Person
     {
-        public string Cafedra_info { get; set; }
+        public string Department_info { get; set; }
         public string Position_info { get; set; }
-        public Teacher(){}
+        public static List<Teacher> Teachers = new List<Teacher>();
+        public Teacher(){Teachers.Add(this);}
 
-        public Teacher(string Name,string Gender,int i,string Id,string Address,string cafedraInfo,string positionInfo):base(Name,Gender,i,Id,Address)
+        public Teacher(string Name,string Gender,string Id,string Address,string cafedraInfo,string positionInfo):base(Name,Gender,Id,Address)
         {
-            Cafedra_info = cafedraInfo;
+            Department_info = cafedraInfo;
             Position_info = positionInfo;
+            Teachers.Add(this);
         }
     }
 }
