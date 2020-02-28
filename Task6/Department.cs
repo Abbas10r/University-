@@ -1,30 +1,91 @@
+using System;
 using System.Collections.Generic;
 namespace Task6
 {
     public class Department:Faculty
     {
+        private static int Counter=-1;
+        public int Id { get; set; }
         public string Department_name{ get; set; }
         public bool IsProfiling{ get; set; }
         public Teacher Head{ get; set; }
+        public List<Group> Department_groups = new List<Group>();
         public static List<Person> Heads = new List<Person>();
         public static List<Department> Departments = new List<Department>();
-        public Department() {Departments.Add(this);}
+        //-------------------------------------------------------------------------------
+        public Department() {Departments.Add(this);Faculty_departments.Add(this);
+            Counter++;
+            Id = Counter;
+        }
         public Department(string faculty_name,string department_name, bool IsProfiling, Teacher Head):base(faculty_name)
         {   
             Department_name = department_name;
             this.IsProfiling = IsProfiling;
             this.Head = Head;
             Departments.Add(this);
+            Faculty_departments.Add(this);
+            Counter++;
+            Id = Counter;
         }
-        public string Show_list(List<Person> list)
+        //-------------------------------------------------------------------------------
+        public static string Return_list(List<Student> list)
         {
             string st = "", stt = "";
             foreach (var VARIABLE in list)
             {
-                stt = $"  {VARIABLE}";
+                stt = $"  {VARIABLE.Id} - {VARIABLE.Name}";
                 st += stt;
             }
             return st;
+        }
+        public static void Show_list(List<Student> list)
+        {
+            Console.WriteLine($"Уже имеются: {Return_list(list)}");
+        }
+        //-------------------------------------------------------------------------------
+        public static string Return_list(List<Faculty> list)
+        {
+            string st = "", stt = "";
+            foreach (var VARIABLE in list)
+            {
+                stt = $" {VARIABLE.Id} - {VARIABLE.Faculty_name}\n";
+                st += stt;
+            }
+            return st;
+        }
+        public static void Show_list(List<Faculty> list)
+        {
+            Console.WriteLine($"Уже имеются: {Return_list(list)}");
+        }
+        //-------------------------------------------------------------------------------
+        public static string Return_list(List<Group> list)
+        {
+            string st = "", stt = "";
+            foreach (var VARIABLE in list)
+            {
+                stt = $"  {VARIABLE.Id} - {VARIABLE.Group_name}";
+                st += stt;
+            }
+            return st;
+        }
+        public static void Show_list(List<Group> list)
+        {
+            Console.WriteLine($"Уже имеются: {Return_list(list)}");
+        }
+        //-------------------------------------------------------------------------------
+        public static string Return_list(List<Department> list)
+        {
+            string st = "", stt = "";
+            foreach (var VARIABLE in list)
+            {
+                stt = $"  {VARIABLE.Id} - {VARIABLE.Department_name}";
+                st += stt;
+            }
+            return st;
+        }
+        public static void Show_list(List<Department> list)
+        {
+            Console.WriteLine($"Уже имеются: {Return_list(list)}");
         }
     }
 }

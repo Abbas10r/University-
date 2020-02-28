@@ -5,13 +5,21 @@ namespace Task6
 {
     public class Student:Person
     {
+        private static int Counter=-1;
+        public int Id { get; set; }
         public string Group_info { get; set; }
         public static List<Student> Students = new List<Student>();
-        public Student(){ Students.Add(this);}
-        public Student(string Name,string Gender,string Id,string Address,string Group_Info):base(Name,Gender,Id,Address)
+        //-------------------------------------------------------------------------------
+        public Student(){ Students.Add(this);
+            Counter++;
+            Id = Counter;
+        }
+        public Student(string Name,string Gender,string Passport,string Address,string Group_Info):base(Name,Gender,Passport,Address)
         {
             this.Group_info = Group_info;
             Students.Add(this);
+            Counter++;
+            Id = Counter;
         }
     }
 }
