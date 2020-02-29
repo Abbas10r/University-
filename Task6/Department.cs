@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using static Task6.Faculty;
 namespace Task6
 {
     public class Department:Faculty
@@ -13,20 +14,11 @@ namespace Task6
         public static List<Person> Heads = new List<Person>();
         public static List<Department> Departments = new List<Department>();
         //-------------------------------------------------------------------------------
-        public Department() {Departments.Add(this);Faculty_departments.Add(this);
+        public Department() 
+        {
             Counter++;
             Id = Counter;
         }
-        /*public Department(string faculty_name,string department_name, bool IsProfiling, Teacher Head):base(faculty_name)
-        {   
-            Department_name = department_name;
-            this.IsProfiling = IsProfiling;
-            this.Head = Head;
-            Departments.Add(this);
-            Faculty_departments.Add(this);
-            Counter++;
-            Id = Counter;
-        }*/
         //-------------------------------------------------------------------------------
         public static string Return_list(List<Student> list)
         {

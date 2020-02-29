@@ -12,17 +12,9 @@ namespace Task6
         //-------------------------------------------------------------------------------
         public Faculty()
         {
-            Faculties.Add(this);
             Counter++;
             Id = Counter;
         }
-        /*public Faculty(string faculty_name)
-        {
-            Counter++;
-            Id = Counter;
-            Faculty_name = faculty_name;
-            Faculties.Add(this);
-        }*/
         //-------------------------------------------------------------------------------
         public override string ToString()
         {

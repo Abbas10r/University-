@@ -14,12 +14,5 @@ namespace Task6
             Counter++;
             Id = Counter;
         }
-        public Student(string Name,string Gender,string Passport,string Address,string Group_Info):base(Name,Gender,Passport,Address)
-        {
-            this.Group_info = Group_info;
-            Students.Add(this);
-            Counter++;
-            Id = Counter;
-        }
     }
 }

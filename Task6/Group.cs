@@ -1,7 +1,10 @@
 using System;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
+using static Task6.Faculty;
+using static Task6.Department;
 using static Task6.Student;
+using static Task6.Group;
 
 namespace Task6
 {
@@ -15,21 +18,9 @@ namespace Task6
         public static List<Group> Groups = new List<Group>();
         //-------------------------------------------------------------------------------
         public Group(){
-            Groups.Add(this);
-            Department_groups.Add(this);
             Counter++;
             Id = Counter;
         }
-        /*public Group(string faculty_name,string department_name, bool IsProfiling, Teacher Head,string group_name,Student person):base(faculty_name,department_name,IsProfiling,Head)
-        {
-            Group_name = group_name;
-            Leader = person;
-            Group_students.Add(person);
-            Groups.Add(this);
-            Department_groups.Add(this);
-            Counter++;
-            Id = Counter;
-        }*/
         //-------------------------------------------------------------------------------
         public void Add_togroup(Student p1)
         {
@@ -64,6 +55,7 @@ namespace Task6
             if (NotExist == true)
             {
                 var facc = new Faculty{Faculty_name=fac};
+                Faculties.Add(facc);
                 Console.WriteLine("------------------------Завершено!--------------------------");
             }
         }
@@ -95,6 +87,7 @@ namespace Task6
                 string glavcaf = Console.ReadLine();                              
                 var glavcaff = new Teacher{Name=glavcaf};
                 var caff = new Department{Department_name  = caf,Head = glavcaff};
+                Departments.Add(caff);
                 Faculties[id].Faculty_departments.Add(caff);
                 Heads.Add(glavcaff);    
                 Console.WriteLine("------------------------Завершено!--------------------------");
@@ -127,6 +120,7 @@ namespace Task6
                 string star = Console.ReadLine();
                 var starr = new Student{Name=star};
                 var gpp = new Group{Group_name = gp,Leader = starr};
+                Groups.Add(gpp);
                 Departments[id].Department_groups.Add(gpp);
                 Console.WriteLine("------------------------Завершено!--------------------------");
             }
@@ -152,6 +146,7 @@ namespace Task6
             if (NotExist == true)
             {
                 var stud = new Student{Name=name};
+                Students.Add(stud);
                 Show_list(Groups);
                 Console.WriteLine("В какую группу добавить?(id)");
                 int id = Convert.ToInt32(Console.ReadLine());

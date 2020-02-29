@@ -12,13 +12,6 @@ namespace Task6
         {
            
         }
-        public Person(string Name,string Gender,string Passport,string Address)
-        {
-            this.Name = Name;
-            this.Gender = Gender;
-            this.Passport = Passport;
-            this.Address = Address;
-        }
         //-------------------------------------------------------------------------------
         public static string Return_list<T>(List<T> list)
         {

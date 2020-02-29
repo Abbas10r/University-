@@ -15,14 +15,5 @@ namespace Task6
             Counter++;
             Id = Counter;
         }
-
-        public Teacher(string Name,string Gender,string Passport,string Address,string cafedraInfo,string positionInfo):base(Name,Gender,Passport,Address)
-        {
-            Department_info = cafedraInfo;
-            Position_info = positionInfo;
-            Teachers.Add(this);
-            Counter++;
-            Id = Counter;
-        }
     }
 }
