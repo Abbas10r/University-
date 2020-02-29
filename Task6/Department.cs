@@ -5,7 +5,6 @@ namespace Task6
 {
     public class Department:Faculty
     {
-        private static int Counter=-1;
         public new int Id { get; set; }
         public string Department_name{ get; set; }
         public bool IsProfiling{ get; set; }
@@ -14,11 +13,7 @@ namespace Task6
         public static List<Person> Heads = new List<Person>();
         public static List<Department> Departments = new List<Department>();
         //-------------------------------------------------------------------------------
-        public Department() 
-        {
-            Counter++;
-            Id = Counter;
-        }
+        public Department() {}
         //-------------------------------------------------------------------------------
         public static string Return_list(List<Student> list)
         {
@@ -32,7 +27,23 @@ namespace Task6
         }
         public static void Show_list(List<Student> list)
         {
-            Console.WriteLine($"Имеются: {Return_list(list)}");
+            Console.WriteLine($"--------------Имеются: {Return_list(list)}");
+            Console.WriteLine("------------------------Завершено!--------------------------");
+        }
+        //-------------------------------------------------------------------------------
+        public static string Return_list(List<Teacher> list)
+        {
+            string st = "", stt = "";
+            foreach (var VARIABLE in list)
+            {
+                stt = $"  {VARIABLE.Id} - {VARIABLE.Name}\n";
+                st += stt;
+            }
+            return st;
+        }
+        public static void Show_list(List<Teacher> list)
+        {
+            Console.WriteLine($"--------------Имеются: {Return_list(list)}");
             Console.WriteLine("------------------------Завершено!--------------------------");
         }
         //-------------------------------------------------------------------------------
@@ -48,7 +59,7 @@ namespace Task6
         }
         public static void Show_list(List<Faculty> list)
         {
-            Console.WriteLine($"Имеются: {Return_list(list)}");
+            Console.WriteLine($"--------------Имеются: {Return_list(list)}");
             Console.WriteLine("------------------------Завершено!--------------------------");
         }
         //-------------------------------------------------------------------------------
@@ -64,7 +75,7 @@ namespace Task6
         }
         public static void Show_list(List<Group> list)
         {
-            Console.WriteLine($"Имеются: {Return_list(list)}");
+            Console.WriteLine($"--------------Имеются: {Return_list(list)}");
             Console.WriteLine("------------------------Завершено!--------------------------");
         }
         //-------------------------------------------------------------------------------
@@ -80,13 +91,13 @@ namespace Task6
         }
         public static void Show_list(List<Department> list)
         {
-            Console.WriteLine($"Имеются: {Return_list(list)}");
+            Console.WriteLine($"--------------Имеются: {Return_list(list)}");
             Console.WriteLine("------------------------Завершено!--------------------------");
         }
 
         public override string ToString()
         {
-            return $"Название кафедры - {Department_name}, Глава кафедры - {Head}, Группы кафедры - {Return_list(Department_groups)}";
+            return $"Название факультета - {Faculty_name}, Название кафедры - {Department_name}, Глава кафедры - {Head}, Группы кафедры - {Return_list(Department_groups)}";
         }
     }
 }
