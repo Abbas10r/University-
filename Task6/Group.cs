@@ -8,7 +8,7 @@ namespace Task6
     public class Group:Department
     {
         private static int Counter=-1;
-        public int Id { get; set; }
+        public new int Id { get; set; }
         public string Group_name{ get; set; }
         public Person Leader{ get; set; }
         public List<Student> Group_students = new List<Student>();
@@ -20,7 +20,7 @@ namespace Task6
             Counter++;
             Id = Counter;
         }
-        public Group(string faculty_name,string department_name, bool IsProfiling, Teacher Head,string group_name,Student person):base(faculty_name,department_name,IsProfiling,Head)
+        /*public Group(string faculty_name,string department_name, bool IsProfiling, Teacher Head,string group_name,Student person):base(faculty_name,department_name,IsProfiling,Head)
         {
             Group_name = group_name;
             Leader = person;
@@ -29,7 +29,7 @@ namespace Task6
             Department_groups.Add(this);
             Counter++;
             Id = Counter;
-        }
+        }*/
         //-------------------------------------------------------------------------------
         public void Add_togroup(Student p1)
         {
@@ -63,7 +63,8 @@ namespace Task6
             }
             if (NotExist == true)
             {
-                var facc = new Faculty(fac);
+                var facc = new Faculty{Faculty_name=fac};
+                Console.WriteLine("------------------------Завершено!--------------------------");
             }
         }
         //-------------------------------------------------------------------------------
@@ -87,11 +88,16 @@ namespace Task6
             }
             if(NotExist==true)
             {
+                Console.WriteLine("Кафедра принадлежит факультету(id):");
+                Show_list(Faculties);
+                int id = Convert.ToInt32(Console.ReadLine());
                 Console.WriteLine("\nВведите имя главкафедры:");
                 string glavcaf = Console.ReadLine();                              
                 var glavcaff = new Teacher{Name=glavcaf};
                 var caff = new Department{Department_name  = caf,Head = glavcaff};
-                Heads.Add(glavcaff);                                       
+                Faculties[id].Faculty_departments.Add(caff);
+                Heads.Add(glavcaff);    
+                Console.WriteLine("------------------------Завершено!--------------------------");
             }
         }    
         //-------------------------------------------------------------------------------
@@ -114,10 +120,15 @@ namespace Task6
             }
             if (NotExist == true)
             {
+                Console.WriteLine("Группа принадлежит кафедре(id):");
+                Show_list(Departments);
+                int id = Convert.ToInt32(Console.ReadLine());
                 Console.WriteLine("Введите имя старосты:");
                 string star = Console.ReadLine();
                 var starr = new Student{Name=star};
                 var gpp = new Group{Group_name = gp,Leader = starr};
+                Departments[id].Department_groups.Add(gpp);
+                Console.WriteLine("------------------------Завершено!--------------------------");
             }
         }
         //-------------------------------------------------------------------------------
@@ -142,7 +153,10 @@ namespace Task6
             {
                 var stud = new Student{Name=name};
                 Show_list(Groups);
-                Console.WriteLine("В какую группу добавить?");
+                Console.WriteLine("В какую группу добавить?(id)");
+                int id = Convert.ToInt32(Console.ReadLine());
+                Groups[id].Group_students.Add(stud);
+                Console.WriteLine("------------------------Завершено!--------------------------");
             }
         }
         //-------------------------------------------------------------------------------

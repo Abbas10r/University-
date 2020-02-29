@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using static Task6.Department;
 namespace Task6
 {
     public class Faculty
@@ -15,12 +16,17 @@ namespace Task6
             Counter++;
             Id = Counter;
         }
-        public Faculty(string faculty_name)
+        /*public Faculty(string faculty_name)
         {
             Counter++;
             Id = Counter;
             Faculty_name = faculty_name;
             Faculties.Add(this);
+        }*/
+        //-------------------------------------------------------------------------------
+        public override string ToString()
+        {
+            return $"Название факультета - {Faculty_name}, Кафедры факультета - {Return_list(Faculty_departments)}";
         }
     }
 }

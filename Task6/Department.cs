@@ -5,7 +5,7 @@ namespace Task6
     public class Department:Faculty
     {
         private static int Counter=-1;
-        public int Id { get; set; }
+        public new int Id { get; set; }
         public string Department_name{ get; set; }
         public bool IsProfiling{ get; set; }
         public Teacher Head{ get; set; }
@@ -17,7 +17,7 @@ namespace Task6
             Counter++;
             Id = Counter;
         }
-        public Department(string faculty_name,string department_name, bool IsProfiling, Teacher Head):base(faculty_name)
+        /*public Department(string faculty_name,string department_name, bool IsProfiling, Teacher Head):base(faculty_name)
         {   
             Department_name = department_name;
             this.IsProfiling = IsProfiling;
@@ -26,21 +26,22 @@ namespace Task6
             Faculty_departments.Add(this);
             Counter++;
             Id = Counter;
-        }
+        }*/
         //-------------------------------------------------------------------------------
         public static string Return_list(List<Student> list)
         {
             string st = "", stt = "";
             foreach (var VARIABLE in list)
             {
-                stt = $"  {VARIABLE.Id} - {VARIABLE.Name}";
+                stt = $"  {VARIABLE.Id} - {VARIABLE.Name}\n";
                 st += stt;
             }
             return st;
         }
         public static void Show_list(List<Student> list)
         {
-            Console.WriteLine($"Уже имеются: {Return_list(list)}");
+            Console.WriteLine($"Имеются: {Return_list(list)}");
+            Console.WriteLine("------------------------Завершено!--------------------------");
         }
         //-------------------------------------------------------------------------------
         public static string Return_list(List<Faculty> list)
@@ -55,7 +56,8 @@ namespace Task6
         }
         public static void Show_list(List<Faculty> list)
         {
-            Console.WriteLine($"Уже имеются: {Return_list(list)}");
+            Console.WriteLine($"Имеются: {Return_list(list)}");
+            Console.WriteLine("------------------------Завершено!--------------------------");
         }
         //-------------------------------------------------------------------------------
         public static string Return_list(List<Group> list)
@@ -70,7 +72,8 @@ namespace Task6
         }
         public static void Show_list(List<Group> list)
         {
-            Console.WriteLine($"Уже имеются: {Return_list(list)}");
+            Console.WriteLine($"Имеются: {Return_list(list)}");
+            Console.WriteLine("------------------------Завершено!--------------------------");
         }
         //-------------------------------------------------------------------------------
         public static string Return_list(List<Department> list)
@@ -85,7 +88,13 @@ namespace Task6
         }
         public static void Show_list(List<Department> list)
         {
-            Console.WriteLine($"Уже имеются: {Return_list(list)}");
+            Console.WriteLine($"Имеются: {Return_list(list)}");
+            Console.WriteLine("------------------------Завершено!--------------------------");
+        }
+
+        public override string ToString()
+        {
+            return $"Название кафедры - {Department_name}, Глава кафедры - {Head}, Группы кафедры - {Return_list(Department_groups)}";
         }
     }
 }
