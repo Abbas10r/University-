@@ -13,6 +13,35 @@ namespace Task6
         public Teacher()
         {
         }
+        //-------------------------------------------------------------------------------
+        public static void Add_teacher()
+        {
+            bool NotExist = true;
+            Console.WriteLine("Введите имя учителя:");
+            string name = Console.ReadLine();
+            foreach (Teacher VARIABLE in Teachers)
+            {
+                if (VARIABLE.Name == name)
+                {
+                    NotExist = false;
+                    Console.WriteLine("--------------Учитель уже существует!");
+                }
+                else
+                {
+                    NotExist = true;
+                }
+            }
+            if (NotExist == true)
+            {
+                Console.WriteLine("Предмет преподавания: ");
+                string subject = Console.ReadLine();
+                var tech = new Teacher{Name=name,Position_info = subject};
+                Teachers.Add(tech);
+                tech.Id = Teachers.IndexOf(tech);
+                Console.WriteLine("------------------------Завершено!--------------------------");
+            }
+        }
+        //-------------------------------------------------------------------------------
         public override string ToString()
         {
             return $"ФИО учителя - {Name}, Предмет преподавания - {Position_info}";

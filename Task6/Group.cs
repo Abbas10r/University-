@@ -18,17 +18,7 @@ namespace Task6
         //-------------------------------------------------------------------------------
         public Group(){ }
         //-------------------------------------------------------------------------------
-        public static void Checker_dep()
-        {
-            if (Faculties.Count == 0)
-            {
-                Console.WriteLine("--------------Сначала нужно добавить факультет!");
-            }
-            else
-            {
-                Create_dep();
-            }
-        }
+        
         public static void Checker_gr()
         {
             if (Departments.Count == 0)
@@ -40,81 +30,6 @@ namespace Task6
                 Create_group();
             }
         }
-        public static void Checker_stud()
-        {
-            if (Groups.Count == 0)
-            {
-                Console.WriteLine("--------------Сначала нужно добавить группу!");
-            }
-            else
-            {
-                Add_students();
-            }
-        }
-        //-------------------------------------------------------------------------------
-        public static void Create_fac()
-        {
-            bool NotExist=true;
-            Show_list(Faculties);
-            Console.WriteLine("\nВведите название факультета:");
-            string fac = Console.ReadLine();
-            foreach (Faculty item in Faculties)
-            {
-                if (item.Faculty_name == fac)
-                {
-                    NotExist = false;
-                    Console.WriteLine("--------------Факультет уже существует!");
-                }
-                else
-                {
-                    NotExist = true;
-                }
-            }
-            if (NotExist == true)
-            {
-                var facc = new Faculty{Faculty_name=fac};
-                Faculties.Add(facc);
-                facc.Id=Faculties.IndexOf(facc);
-                Console.WriteLine("------------------------Завершено!--------------------------");
-            }
-        }
-        //-------------------------------------------------------------------------------
-        public static void Create_dep()
-        {
-            bool NotExist = true;
-            Show_list(Departments);
-            Console.WriteLine("\nВведите название кафедры:");
-            string caf = Console.ReadLine();
-            foreach (Department VARIABLE in Departments)
-            {
-                if (VARIABLE.Department_name == caf)
-                {                                
-                    NotExist = false;
-                    Console.WriteLine("--------------Каферда уже существует!");
-                }
-                else
-                {
-                    NotExist = true;
-                }
-            }
-            if(NotExist==true)
-            {
-                Console.WriteLine("Кафедра принадлежит факультету(id):");
-                Show_list(Faculties);
-                int id = Convert.ToInt32(Console.ReadLine());
-                Console.WriteLine("\nВведите имя главкафедры:");
-                string glavcaf = Console.ReadLine();                              
-                var glavcaff = new Teacher{Name=glavcaf};
-                Teachers.Add(glavcaff);
-                glavcaff.Id = Teachers.IndexOf(glavcaff);
-                var caff = new Department{Faculty_name = Faculties[id].Faculty_name,Department_name  = caf,Head = glavcaff};
-                Departments.Add(caff);
-                caff.Id = Departments.IndexOf(caff);
-                Faculties[id].Faculty_departments.Add(caff);
-                Heads.Add(glavcaff);    
-                Console.WriteLine("------------------------Завершено!--------------------------");
-            }
-        }    
         //-------------------------------------------------------------------------------
         public static void Create_group()
         {                 
@@ -150,65 +65,8 @@ namespace Task6
                 Console.WriteLine("------------------------Завершено!--------------------------");
             }
         }
-        //-------------------------------------------------------------------------------
-        public static void Add_students()
-        {
-            bool NotExist = true;
-            Console.WriteLine("Введите имя студента:");
-            string name = Console.ReadLine();
-            foreach (Student VARIABLE in Students)
-            {
-                if (VARIABLE.Name == name)
-                {
-                    NotExist = false;
-                    Console.WriteLine("--------------Студент уже существует!");
-                }
-                else
-                {
-                    NotExist = true;
-                }
-            }
-            if (NotExist == true)
-            {
-                var stud = new Student{Name=name};
-                Students.Add(stud);
-                stud.Id = Students.IndexOf(stud);
-                Show_list(Groups);
-                Console.WriteLine("В какую группу добавить?(id)");
-                int id = Convert.ToInt32(Console.ReadLine());
-                Groups[id].Group_students.Add(stud);
-                stud.Group_info = Groups[id].Group_name;
-                Console.WriteLine("------------------------Завершено!--------------------------");
-            }
-        }
-        //-------------------------------------------------------------------------------
-        public static void Add_teacher()
-        {
-            bool NotExist = true;
-            Console.WriteLine("Введите имя учителя:");
-            string name = Console.ReadLine();
-            foreach (Teacher VARIABLE in Teachers)
-            {
-                if (VARIABLE.Name == name)
-                {
-                    NotExist = false;
-                    Console.WriteLine("--------------Учитель уже существует!");
-                }
-                else
-                {
-                    NotExist = true;
-                }
-            }
-            if (NotExist == true)
-            {
-                Console.WriteLine("Предмет преподавания: ");
-                string subject = Console.ReadLine();
-                var tech = new Teacher{Name=name,Position_info = subject};
-                Teachers.Add(tech);
-                tech.Id = Teachers.IndexOf(tech);
-                Console.WriteLine("------------------------Завершено!--------------------------");
-            }
-        }
+        
+        
         //-------------------------------------------------------------------------------
         public static void Show_lists()
         {

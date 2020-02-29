@@ -12,6 +12,32 @@ namespace Task6
         //-------------------------------------------------------------------------------
         public Faculty() { }
         //-------------------------------------------------------------------------------
+        public static void Create_fac()
+        {
+            bool NotExist=true;
+            Show_list(Faculties);
+            Console.WriteLine("\nВведите название факультета:");
+            string fac = Console.ReadLine();
+            foreach (Faculty item in Faculties)
+            {
+                if (item.Faculty_name == fac)
+                {
+                    NotExist = false;
+                    Console.WriteLine("--------------Факультет уже существует!");
+                }
+                else
+                {
+                    NotExist = true;
+                }
+            }
+            if (NotExist == true)
+            {
+                var facc = new Faculty{Faculty_name=fac};
+                Faculties.Add(facc);
+                facc.Id=Faculties.IndexOf(facc);
+                Console.WriteLine("------------------------Завершено!--------------------------");
+            }
+        }
         public override string ToString()
         {
             return $"Название факультета - {Faculty_name}, Кафедры факультета - {Return_list(Faculty_departments)}";

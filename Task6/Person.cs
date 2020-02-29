@@ -14,19 +14,5 @@ namespace Task6
            
         }
         //-------------------------------------------------------------------------------
-        public static string Return_list<T>(List<T> list)
-        {
-            string st = "", stt = "";
-            foreach (var VARIABLE in list)
-            {
-                stt = $"  {VARIABLE}";
-                st += stt;
-            }
-            return st;
-        }
-        public static void Show_list<T>(List<T> list)
-        {
-            Console.WriteLine($"Уже имеются: {Return_list(list)}");
-        }
     }
 }

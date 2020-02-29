@@ -4,6 +4,7 @@ using System.Linq;
 using static Task6.Faculty;
 using static Task6.Department;
 using static Task6.Student;
+using static Task6.Teacher;
 using static Task6.Group;
 namespace Task6
 {
