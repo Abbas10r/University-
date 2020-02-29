@@ -61,7 +61,6 @@ namespace Task6
                 caff.Id = Departments.IndexOf(caff);
                 Faculties[id].Faculty_departments.Add(caff);
                 Heads.Add(glavcaff);    
-                Console.WriteLine("------------------------Завершено!--------------------------");
             }
         }   
         //-------------------------------------------------------------------------------
@@ -70,15 +69,14 @@ namespace Task6
             string st = "", stt = "";
             foreach (var VARIABLE in list)
             {
-                stt = $"  {VARIABLE.Id} - {VARIABLE.Name}\n";
+                stt = $"  {VARIABLE.Id} - {VARIABLE.Name}";
                 st += stt;
             }
             return st;
         }
         public static void Show_list(List<Student> list)
         {
-            Console.WriteLine($"--------------Имеются: {Return_list(list)}");
-            Console.WriteLine("------------------------Завершено!--------------------------");
+            Console.WriteLine($"Имеются: {Return_list(list)}");
         }
         //-------------------------------------------------------------------------------
         public static string Return_list(List<Teacher> list)
@@ -86,15 +84,14 @@ namespace Task6
             string st = "", stt = "";
             foreach (var VARIABLE in list)
             {
-                stt = $"  {VARIABLE.Id} - {VARIABLE.Name}\n";
+                stt = $"  {VARIABLE.Id} - {VARIABLE.Name}";
                 st += stt;
             }
             return st;
         }
         public static void Show_list(List<Teacher> list)
         {
-            Console.WriteLine($"--------------Имеются: {Return_list(list)}");
-            Console.WriteLine("------------------------Завершено!--------------------------");
+            Console.WriteLine($"-Имеются: {Return_list(list)}");
         }
         //-------------------------------------------------------------------------------
         public static string Return_list(List<Faculty> list)
@@ -102,15 +99,14 @@ namespace Task6
             string st = "", stt = "";
             foreach (var VARIABLE in list)
             {
-                stt = $" {VARIABLE.Id} - {VARIABLE.Faculty_name}\n";
+                stt = $" {VARIABLE.Id} - {VARIABLE.Faculty_name}";
                 st += stt;
             }
             return st;
         }
         public static void Show_list(List<Faculty> list)
         {
-            Console.WriteLine($"--------------Имеются: {Return_list(list)}");
-            Console.WriteLine("------------------------Завершено!--------------------------");
+            Console.WriteLine($"Имеются: {Return_list(list)}");
         }
         //-------------------------------------------------------------------------------
         public static string Return_list(List<Group> list)
@@ -125,8 +121,7 @@ namespace Task6
         }
         public static void Show_list(List<Group> list)
         {
-            Console.WriteLine($"--------------Имеются: {Return_list(list)}");
-            Console.WriteLine("------------------------Завершено!--------------------------");
+            Console.WriteLine($"Имеются: {Return_list(list)}");
         }
         //-------------------------------------------------------------------------------
         public static string Return_list(List<Department> list)
@@ -141,8 +136,7 @@ namespace Task6
         }
         public static void Show_list(List<Department> list)
         {
-            Console.WriteLine($"--------------Имеются: {Return_list(list)}");
-            Console.WriteLine("------------------------Завершено!--------------------------");
+            Console.WriteLine($"Имеются: {Return_list(list)}");
         }
 
         public override string ToString()

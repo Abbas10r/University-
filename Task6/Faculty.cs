@@ -35,7 +35,6 @@ namespace Task6
                 var facc = new Faculty{Faculty_name=fac};
                 Faculties.Add(facc);
                 facc.Id=Faculties.IndexOf(facc);
-                Console.WriteLine("------------------------Завершено!--------------------------");
             }
         }
         public override string ToString()

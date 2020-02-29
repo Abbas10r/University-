@@ -55,14 +55,14 @@ namespace Task6
                 int id = Convert.ToInt32(Console.ReadLine());
                 Console.WriteLine("Введите имя старосты:");
                 string star = Console.ReadLine();
-                var starr = new Student{Name=star};
+                var starr = new Student{Name=star,Group_info = gp};
                 Students.Add(starr);
                 starr.Id = Students.IndexOf(starr);
-                var gpp = new Group{Department_name = Departments[id].Department_name,Group_name = gp,Leader = starr};
+                var gpp = new Group{Faculty_name = Departments[id].Faculty_name,Department_name = Departments[id].Department_name,Group_name = gp,Leader = starr};
                 Groups.Add(gpp);
+                gpp.Group_students.Add(starr);
                 gpp.Id = Groups.IndexOf(gpp);
                 Departments[id].Department_groups.Add(gpp);
-                Console.WriteLine("------------------------Завершено!--------------------------");
             }
         }
         
@@ -76,18 +76,33 @@ namespace Task6
             {
                 case 1:
                     Show_list(Faculties);
+                    Console.WriteLine("Введите id объекта для более подробной инфы");
+                    int id = Convert.ToInt32(Console.ReadLine());
+                    Faculties[id].Show_info();
                     break;
                 case 2:
                     Show_list(Departments);
+                    Console.WriteLine("Введите id объекта для более подробной инфы");
+                    int id1 = Convert.ToInt32(Console.ReadLine());
+                    Departments[id1].Show_info();
                     break;
                 case 3:
                     Show_list(Groups);
+                    Console.WriteLine("Введите id объекта для более подробной инфы");
+                    int id2 = Convert.ToInt32(Console.ReadLine());
+                    Groups[id2].Show_info();
                     break;
                 case 4:
                     Show_list(Students);
+                    Console.WriteLine("Введите id объекта для более подробной инфы");
+                    int id3 = Convert.ToInt32(Console.ReadLine());
+                    Students[id3].Show_info();
                     break;
                 case 5:
                     Show_list(Teachers);
+                    Console.WriteLine("Введите id объекта для более подробной инфы");
+                    int id4 = Convert.ToInt32(Console.ReadLine());
+                    Teachers[id4].Show_info();
                     break;
             }
         }

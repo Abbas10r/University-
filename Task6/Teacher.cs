@@ -38,7 +38,6 @@ namespace Task6
                 var tech = new Teacher{Name=name,Position_info = subject};
                 Teachers.Add(tech);
                 tech.Id = Teachers.IndexOf(tech);
-                Console.WriteLine("------------------------Завершено!--------------------------");
             }
         }
         //-------------------------------------------------------------------------------

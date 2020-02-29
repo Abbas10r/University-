@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using static Task6.Faculty;
 using static Task6.Department;
 using static Task6.Student;
@@ -24,7 +23,6 @@ namespace Task6
                                   "\n   Нажмите 4 чтобы добавить студента"+
                                   "\n   Нажмите 5 чтобы добавить преподавателя"+
                                   "\n   Нажмите 6 чтобы увидеть отдельные списки: "+
-                                  //"\n   Нажмите 7 чтобы получить более подробную инф."+
                                   "\n   Нажмите 0 чтобы завершить программу.");
                 button = Convert.ToInt32(Console.ReadLine());
                 switch (button)
@@ -50,7 +48,7 @@ namespace Task6
                     case 6:
                         Show_lists();
                         break;
-                    case 7:
+                    default:
                         break;
                 }
             }

@@ -54,9 +54,9 @@ namespace Task6
                 int id = Convert.ToInt32(Console.ReadLine());
                 Groups[id].Group_students.Add(stud);
                 stud.Group_info = Groups[id].Group_name;
-                Console.WriteLine("------------------------Завершено!--------------------------");
             }
         }
+        
         public override string ToString()
         {
             return $"ФИО студента - {Name}, Группа - {Group_info}";
